@@ -1,7 +1,7 @@
 const express = require('express');
+const { animals } = require('./data/animals');
 const PORT = process.env.PORT || 3001;
 const app = express();
-const { animals } = require('./data/animals');
 
 function filterByQuery(query, animalsArray) {
     let personalityTraitsArray = [];
@@ -21,7 +21,7 @@ function filterByQuery(query, animalsArray) {
     }
 
     if (query.diet) {
-        filteredrResults = filteredResults.filter(animal => animal.diet === query.diet);
+        filteredResults = filteredResults.filter(animal => animal.diet === query.diet);
     }
 
     if (query.species) {
